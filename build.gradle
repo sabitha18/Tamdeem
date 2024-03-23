@@ -1,0 +1,34 @@
+buildscript {
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        google()
+        jcenter()
+
+
+    }
+
+
+
+
+}
+plugins {
+    id 'com.android.application' version '8.0.0' apply false
+    id 'com.android.library' version '8.0.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+}
+
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

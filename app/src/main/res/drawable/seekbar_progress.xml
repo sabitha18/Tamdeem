@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- seekbar_progress.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Black lines -->
+    <item android:id="@android:id/background">
+        <clip>
+            <shape android:shape="rectangle">
+                <size android:height="10dp" />
+                <solid android:color="#000000" />
+            </shape>
+        </clip>
+    </item>
+    <!-- Blue lines -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <rotate
+                android:fromDegrees="45"
+                android:pivotX="0%"
+                android:pivotY="0%">
+                <shape android:shape="rectangle">
+                    <size
+                        android:width="8dp"
+                        android:height="14dp" />
+                    <solid android:color="#254CA0" />
+                </shape>
+            </rotate>
+        </clip>
+    </item>
+</layer-list>
