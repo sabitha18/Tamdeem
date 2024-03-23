@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/rocket_icon" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/home_person" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:text="@string/event"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="307dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="307dp"
+                    android:layout_marginTop="34dp"
+                    app:cardCornerRadius="50dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/details_bg_dummy" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/card_details"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="31dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center"
+                        android:text="View details"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/more_information"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="279dp"
+                android:layout_gravity="center"
+                android:layout_height="44dp"
+                android:layout_marginTop="21dp"
+                app:cardBackgroundColor="@color/red"
+                app:cardCornerRadius="41dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Park Policies"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="279dp"
+                android:layout_gravity="center"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/red"
+                app:cardCornerRadius="41dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="FAQ"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/bottom_ui" />
+    </RelativeLayout>
+</RelativeLayout>

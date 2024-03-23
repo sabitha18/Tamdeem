@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    android:background="@color/dark_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/home" />
+
+        <ImageView
+        android:layout_width="42dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/barcode" />
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/offer" />
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="28dp"
+
+            android:src="@drawable/calender" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

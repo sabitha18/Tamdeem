@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="117dp"
+        android:layout_height="118dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        app:cardBackgroundColor="@color/red"
+        app:cardCornerRadius="100dp">
+
+        <ImageView
+            android:id="@+id/img_world"
+            android:layout_width="76dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:src="@drawable/thrill" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/montserrat_semi_bold"
+        android:text="Thrills"
+        android:textAlignment="center"
+        android:textColor="@color/dark_blue"
+        android:textSize="14dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/red"/>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="55dp"
+        android:layout_height="17dp"
+        android:visibility="invisible"
+        android:id="@+id/card_selection"
+        app:cardBackgroundColor="@color/red"
+        app:cardCornerRadius="19dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+
+        android:background="@color/red"/>
+
+</LinearLayout>
