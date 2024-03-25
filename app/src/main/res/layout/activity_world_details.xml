@@ -31,6 +31,7 @@
                     android:src="@drawable/rocket_icon" />
 
                 <ImageView
+                    android:id="@+id/img_profile"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_alignParentEnd="true"

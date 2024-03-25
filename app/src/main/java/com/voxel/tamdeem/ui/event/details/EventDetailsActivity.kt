@@ -10,6 +10,7 @@ import com.voxel.tamdeem.R
 import com.voxel.tamdeem.databinding.ActivityEventBinding
 import com.voxel.tamdeem.databinding.ActivityEventDetailsBinding
 import com.voxel.tamdeem.ui.event.add.AddEventActivity
+import com.voxel.tamdeem.ui.login.LoginActivity
 
 class EventDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEventDetailsBinding
@@ -28,6 +29,11 @@ class EventDetailsActivity : AppCompatActivity() {
     private fun handleClick() {
         binding.cardAdd.setOnClickListener {
             val intent = Intent(this@EventDetailsActivity, AddEventActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
+        binding.imgProfile.setOnClickListener {
+            val intent = Intent(this@EventDetailsActivity, LoginActivity::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
         }

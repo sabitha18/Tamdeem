@@ -1,4 +1,4 @@
-package com.voxel.tamdeem.ui.world.details
+package com.voxel.tamdeem.ui.voucher
 
 import android.content.Intent
 import android.os.Build
@@ -7,14 +7,12 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import com.voxel.tamdeem.R
-import com.voxel.tamdeem.databinding.ActivityWorldDetailsBinding
-import com.voxel.tamdeem.databinding.ActivityWorldListingBinding
-import com.voxel.tamdeem.ui.event.EventActivity
+import com.voxel.tamdeem.databinding.ActivityVoucherBinding
+import com.voxel.tamdeem.databinding.ActivityVoucherDetailsBinding
 import com.voxel.tamdeem.ui.login.LoginActivity
-import com.voxel.tamdeem.ui.world.WorldActivity
 
-class WorldDetailsActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityWorldDetailsBinding
+class VoucherDetailsActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityVoucherDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -22,22 +20,16 @@ class WorldDetailsActivity : AppCompatActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         }
-        binding = ActivityWorldDetailsBinding.inflate(layoutInflater)
+        binding = ActivityVoucherDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         handleClick()
     }
-
     private fun handleClick() {
-        binding.cardDetails.setOnClickListener {
-            val intent = Intent(this@WorldDetailsActivity, EventActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(0, 0)
-        }
         binding.imgProfile.setOnClickListener {
-            val intent = Intent(this@WorldDetailsActivity, LoginActivity::class.java)
+            val intent = Intent(this@VoucherDetailsActivity, LoginActivity::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
+
     }
 }

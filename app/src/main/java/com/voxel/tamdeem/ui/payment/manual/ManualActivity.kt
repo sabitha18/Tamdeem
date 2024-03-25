@@ -1,4 +1,4 @@
-package com.voxel.tamdeem.ui.world.details
+package com.voxel.tamdeem.ui.payment.manual
 
 import android.content.Intent
 import android.os.Build
@@ -7,14 +7,13 @@ import android.os.Bundle
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import com.voxel.tamdeem.R
-import com.voxel.tamdeem.databinding.ActivityWorldDetailsBinding
-import com.voxel.tamdeem.databinding.ActivityWorldListingBinding
-import com.voxel.tamdeem.ui.event.EventActivity
+import com.voxel.tamdeem.databinding.ActivityManualBinding
+import com.voxel.tamdeem.databinding.ActivityPaymentBinding
 import com.voxel.tamdeem.ui.login.LoginActivity
-import com.voxel.tamdeem.ui.world.WorldActivity
+import com.voxel.tamdeem.ui.payment.scan.ScanActivity
 
-class WorldDetailsActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityWorldDetailsBinding
+class ManualActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityManualBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -22,20 +21,20 @@ class WorldDetailsActivity : AppCompatActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         }
-        binding = ActivityWorldDetailsBinding.inflate(layoutInflater)
+        binding = ActivityManualBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         handleClick()
     }
 
     private fun handleClick() {
-        binding.cardDetails.setOnClickListener {
-            val intent = Intent(this@WorldDetailsActivity, EventActivity::class.java)
+        binding.imgProfile.setOnClickListener {
+            val intent = Intent(this@ManualActivity, LoginActivity::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
         }
-        binding.imgProfile.setOnClickListener {
-            val intent = Intent(this@WorldDetailsActivity, LoginActivity::class.java)
+        binding.cardScan.setOnClickListener {
+            val intent = Intent(this@ManualActivity, ScanActivity::class.java)
             startActivity(intent)
             overridePendingTransition(0, 0)
         }

@@ -13,6 +13,33 @@
         android:theme="@style/Theme.Tamdeem"
         tools:targetApi="31">
         <activity
+            android:name=".ui.voucher.VoucherDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.voucher.VoucherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.main.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.account.AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.wallet.WalletActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.payment.scan.ScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.payment.manual.ManualActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.payment.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.bonus.BonusActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity

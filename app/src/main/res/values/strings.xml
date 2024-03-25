@@ -17,4 +17,16 @@
     <string name="password">Password</string>
     <string name="sign_in_using_google_option">Sign in using Google option</string>
     <string name="continue_as_a_guest_be_able_to_see_o_er_events_brands_locations">Continue as a Guest - be able to see o er, events, brands, locations</string>
+    <string name="add_a_promo_code_coupon">Add a promo code/ coupon</string>
+    <string name="buy_with">Buy with</string>
+    <string name="wallet_total">Wallet total</string>
+    <string name="pay_now">PAY NOW</string>
+    <string name="manual_mode">Manual mode</string>
+    <string name="type_card_barcode_here">Type card barcode here</string>
+    <string name="scan_card">Scan card</string>
+    <string name="look_up_with_phone">Look up with phone</string>
+    <string name="my_passes_add_ons"><![CDATA[My passes & Add - ons]]></string>
+    <string name="my_account">My Account</string>
+    <string name="first_name">First name</string>
+    <string name="my_vouchers">My Vouchers</string>
 </resources>

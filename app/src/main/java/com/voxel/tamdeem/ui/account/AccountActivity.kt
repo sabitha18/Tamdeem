@@ -1,6 +1,5 @@
-package com.voxel.tamdeem.ui.world
+package com.voxel.tamdeem.ui.account
 
-import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,14 +8,12 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.voxel.bookmeapp.ui.home.model.Cat
 import com.voxel.tamdeem.R
-import com.voxel.tamdeem.databinding.ActivityMainBinding
-import com.voxel.tamdeem.databinding.ActivityWorldBinding
-import com.voxel.tamdeem.ui.login.LoginActivity
+import com.voxel.tamdeem.databinding.ActivityAccountBinding
+import com.voxel.tamdeem.databinding.ActivityBonusBinding
 import com.voxel.tamdeem.ui.main.adapter.HomeHistoryAdapter
-import com.voxel.tamdeem.ui.world.adapter.WorldAdapter
 
-class WorldActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityWorldBinding
+class AccountActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAccountBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -24,29 +21,19 @@ class WorldActivity : AppCompatActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         }
-        binding = ActivityWorldBinding.inflate(layoutInflater)
+        binding = ActivityAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        manageWorld()
-        handleClick()
+        manageHistory()
     }
-
-    private fun handleClick() {
-        binding.imgProfile.setOnClickListener {
-            val intent = Intent(this@WorldActivity, LoginActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(0, 0)
-        }
-    }
-
-    private fun manageWorld() {
-        binding.recyclerWorld.apply {
+    private fun manageHistory() {
+        binding.recyclerHistory.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-            val worldAdapter = WorldAdapter(this@WorldActivity, createArtistList()) { Cat, position ->
+            val historyAdapter = HomeHistoryAdapter(this@AccountActivity, createArtistList()) { Cat, position ->
 
             }
-            adapter = worldAdapter
+            adapter = historyAdapter
         }
     }
     private fun createArtistList(): ArrayList<Cat> {

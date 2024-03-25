@@ -1,4 +1,4 @@
-package com.voxel.tamdeem.ui.world.listing
+package com.voxel.tamdeem.ui.bonus
 
 import android.content.Intent
 import android.os.Build
@@ -9,14 +9,14 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.voxel.bookmeapp.ui.home.model.Cat
 import com.voxel.tamdeem.R
-import com.voxel.tamdeem.databinding.ActivityMainBinding
-import com.voxel.tamdeem.databinding.ActivityWorldListingBinding
+import com.voxel.tamdeem.databinding.ActivityBonusBinding
+import com.voxel.tamdeem.databinding.ActivityLoginBinding
+import com.voxel.tamdeem.ui.bonus.adapter.BonusAdapter
 import com.voxel.tamdeem.ui.login.LoginActivity
 import com.voxel.tamdeem.ui.world.listing.adapter.WorldDetailsListingAdapter
-import com.voxel.tamdeem.ui.world.listing.adapter.WorldListingAdapter
 
-class WorldListingActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityWorldListingBinding
+class BonusActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityBonusBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -24,38 +24,18 @@ class WorldListingActivity : AppCompatActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         }
-        binding = ActivityWorldListingBinding.inflate(layoutInflater)
+        binding = ActivityBonusBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        manageCat()
-        manageCatDetails()
         handleClick()
+        manageListing()
     }
 
-    private fun handleClick() {
-        binding.imgProfile.setOnClickListener {
-            val intent = Intent(this@WorldListingActivity, LoginActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(0, 0)
-        }
-    }
-
-    private fun manageCatDetails() {
-        binding.recyclerWorldCatList.apply {
+    private fun manageListing() {
+        binding.recyclerList.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-            val catAdapter = WorldDetailsListingAdapter(this@WorldListingActivity,createArtistList()) { Cat, position ->
-
-            }
-            adapter = catAdapter
-        }
-    }
-
-    private fun manageCat() {
-        binding.recyclerWorldCat.apply {
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-
-            val catAdapter = WorldListingAdapter(this@WorldListingActivity,createArtistList()) { Cat, position ->
+            val catAdapter = BonusAdapter(this@BonusActivity,createArtistList()) { Cat, position ->
 
             }
             adapter = catAdapter
@@ -73,5 +53,12 @@ class WorldListingActivity : AppCompatActivity() {
                 "VR/AR"
             )
         )
+    }
+    private fun handleClick() {
+        binding.imgProfile.setOnClickListener {
+            val intent = Intent(this@BonusActivity, LoginActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, 0)
+        }
     }
 }

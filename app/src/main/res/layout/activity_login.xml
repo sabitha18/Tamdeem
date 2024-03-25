@@ -51,6 +51,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:id="@+id/card_login"
             app:cardBackgroundColor="@color/dark_blue"
             android:layout_marginTop="19dp"
             app:cardCornerRadius="37dp"

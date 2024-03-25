@@ -10,4 +10,7 @@
     <color name="red">#D61E3E</color>
     <color name="dark_blue">#131441</color>
     <color name="blue">#254CA0</color>
+    <color name="light_blue">#006CA3</color>
+    <color name="violet">#AE67A9</color>
+    <color name="pink">#f3bcc6</color>
 </resources>
